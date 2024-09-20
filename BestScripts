@@ -7,8 +7,26 @@ local scripts = {
 }
 
 -- Check if the PlaceId is in the scripts table and execute the corresponding script
-if scripts[placeId] then
-    loadstring(game:HttpGet(scripts[placeId]))()
+local scriptUrl = scripts[placeId]
+if scriptUrl then
+    -- Attempt to get the script content from the URL
+    local success, response = pcall(function()
+        return game:HttpGet(scriptUrl)
+    end)
+
+    -- If the request is successful, execute the script
+    if success then
+        local loadSuccess, loadError = pcall(function()
+            loadstring(response)()
+        end)
+
+        -- Check if the loadstring execution was successful
+        if not loadSuccess then
+            warn("Failed to execute script: " .. loadError)
+        end
+    else
+        warn("Failed to retrieve script from URL: " .. response)
+    end
 else
-    warn("No script available for this game.")
+    warn("No script available for this game (PlaceId: " .. placeId .. ").")
 end
