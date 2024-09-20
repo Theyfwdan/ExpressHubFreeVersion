@@ -3,7 +3,7 @@ local placeId = game.PlaceId
 
 local scripts = {
     [2534724415] = "https://raw.githubusercontent.com/Theyfwdan/Emergency-Response-Script/main/bestelrcscript", 
-    [286090429] = "https://raw.githubusercontent.com/Theyfwdan/Free-Arsenal-Script/refs/heads/main/bestfreescript" 
+    [286090429] = "https://raw.githubusercontent.com/Theyfwdan/Paid-Arsenal-Script/refs/heads/main/bestpaidarsenalscript" 
 }
 
 if scripts[placeId] then
