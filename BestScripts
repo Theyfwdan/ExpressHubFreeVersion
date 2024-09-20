@@ -2,13 +2,18 @@ local placeId = game.PlaceId
 
 -- Define scripts for different games
 local scripts = {
-    [2534724415] = "loadstring(game:HttpGet("https://raw.githubusercontent.com/Theyfwdan/Emergency-Response-Script/main/bestelrcscript", -- Emergency Response Script URL
-    [286090429] = "loadstring(game:HttpGet("https://raw.githubusercontent.com/Theyfwdan/Paid-Arsenal-Script/main/bestpaidarsenalscript" -- Paid Arsenal Script URL
+    [2534724415] = "https://raw.githubusercontent.com/Theyfwdan/Emergency-Response-Script/main/bestelrcscript", -- Emergency Response Script URL
+    [286090429] = "https://raw.githubusercontent.com/Theyfwdan/Paid-Arsenal-Script/main/bestpaidarsenalscript" -- Paid Arsenal Script URL
 }
 
 -- Check if the PlaceId is in the scripts table and execute the corresponding script
 if scripts[placeId] then
-    loadstring(game:HttpGet(scripts[placeId]))()
+    local success, errorMsg = pcall(function()
+        loadstring(game:HttpGet(scripts[placeId]))()
+    end)
+    if not success then
+        warn("Error executing script: " .. errorMsg)
+    end
 else
     warn("No script available for this game.")
 end
