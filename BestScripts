@@ -3,7 +3,8 @@ local placeId = game.PlaceId
 local scripts = {
     [2534724415] = "https://raw.githubusercontent.com/Theyfwdan/Emergency-Response-Script/main/bestelrcscript", 
     [286090429] = "https://raw.githubusercontent.com/Theyfwdan/Paid-Arsenal-Script/refs/heads/main/bestpaidarsenalscript",
-    [142823291] = "https://raw.githubusercontent.com/Theyfwdan/Expresshub-mm2-script/refs/heads/main/opmm2script" 
+    [142823291] = "https://raw.githubusercontent.com/Theyfwdan/Expresshub-mm2-script/refs/heads/main/opmm2script",
+    [1537690962] = "https://raw.githubusercontent.com/Theyfwdan/Premium-bee-swarm-script/refs/heads/main/expresshubbss"  -- New entry added here
 }
 
 if scripts[placeId] then
